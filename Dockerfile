@@ -1,6 +1,7 @@
-FROM centos:latest
-RUN yum install httpd -y \
-    echo "please this time work" > /var/www/html/index.html
+FROM ubuntu
+RUN apt-get update -y
+RUN apt-get install apache2 -y
 EXPOSE 80
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"] 	
+CMD ["usr/sbin/apachectl", "-DFOREGROUND"]
+~
 
